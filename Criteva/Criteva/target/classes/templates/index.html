@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+    <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+
+<img th:src="@{/images/img.png}" class="d-block h-25 w-100" alt="image bienvenue">
+
+<div th:if="${message != null}" class="alert alert-success alert-dismissible fade show text-center message"
+     role="alert">
+    [[${message}]]
+    <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="card text-center">
+    <div class="card-header">
+        <h2 style="text-center" >Des critères évalués, des décisions informées : Criteva, la clé de votre évaluation précise.</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 card-height">
+                    <img th:src="@{/images/img_3.png}" class="card-img-top" alt="evaluation">
+                    <div class="card-body">
+                        <h5 class="card-title">Evaluation</h5>
+                        <p class="card-text">Donner votre avis en attribuant une note.</p>
+                        <a th:href="@{/todoList}" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 card-height">
+                    <img th:src="@{/images/img_1.png}" class="card-img-top" alt="statistic">
+                    <div class="card-body">
+                        <h5 class="card-title">Statisques</h5>
+                        <p class="card-text">Moyenne des évaluations de critères.</p>
+                        <a href="#" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 card-height">
+                    <img th:src="@{/images/img_4.png}" class="card-img-top" alt="statistic">
+                    <div class="card-body">
+                        <h5 class="card-title">Historique</h5>
+                        <p class="card-text">Historique d'évaluation des critères.</p>
+                        <a href="#" class="btn btn-primary">Acceder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a th:href="@{/createTodo}">Créer un todo</a>
+    </div>
+
+
+</div>
+
+<div class="card-footer text-muted">
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</div>
+
+<div>
+</div>
+
+
+</body>
+</html>

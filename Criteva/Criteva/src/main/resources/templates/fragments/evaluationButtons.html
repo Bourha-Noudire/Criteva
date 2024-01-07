@@ -1,0 +1,8 @@
+<td xmlns:th="http://www.w3.org/1999/xhtml">
+    <span th:each="mark : ${#numbers.sequence(1, 5)}">
+        <a th:if="${tutorial.mark == mark}" class="fa-regular fa-circle-check"
+           th:href="@{'/tutorials/' + ${tutorial.id} + '/mark/' + ${mark}}" th:text="${mark}" title="Mark [[${mark}]]"></a>
+        <a th:unless="${tutorial.mark == mark}" class="fa-regular fa-circle icon-dark"
+           th:href="@{'/tutorials/' + ${tutorial.id} + '/mark/' + ${mark}}" th:text="${mark}" title="Mark [[${mark}]]"></a>
+    </span>
+</td>

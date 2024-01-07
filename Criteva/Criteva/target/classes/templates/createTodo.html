@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<h1>Créer un todo:</h1>
+<a th:href="@{/}">Revenir à la page d'acceuil</a>
+<form th:action="@{/createTodo}"
+      th:object="${todoForm}" method="POST">
+    Titre:
+    <input type="text" th:field="*{title}"/>
+    <br/>
+    Description:
+    <input type="text" th:field="*{description}"/>
+    <br/>
+    <input type="submit" value="Créer"/>
+</form>
+<!-- Check if errorMessage is not null and not empty -->
+<div th:if="${errorMessage}" th:text="${errorMessage}">
+</div>
+</body>
+</html>

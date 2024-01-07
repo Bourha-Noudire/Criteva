@@ -1,0 +1,31 @@
+server:
+  port: 8085
+  error:
+    path: /error
+spring:
+  thymeleaf:
+    cache: false
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:System_Evaluation_DB
+    # url=jdbc:h2:file:/data/demo
+    username: Light
+    password: pass
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    ddl-auto: create-drop
+# Logging
+    show-sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
